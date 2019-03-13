@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhonghaollc.zhonghaosite.mapper.HomeMapper">
+
+    <select id="selectAllHomeBannerSectionEntity" resultType="com.zhonghaollc.zhonghaosite.entity.HomeBannerSectionEntity">
+        select * from HomeBannerSectionEntity
+    </select>
+
+    <select id="selectAllHomeFeaturesSectionEntity" resultType="com.zhonghaollc.zhonghaosite.entity.HomeFeaturesSectionEntity">
+        select * from HomeFeaturesSectionEntity
+    </select>
+
+    <select id="selectAllHomeServicesSectionEntity" resultType="com.zhonghaollc.zhonghaosite.entity.HomeServicesSectionEntity">
+        select * from HomeServicesSectionEntity
+    </select>
+
+</mapper>
