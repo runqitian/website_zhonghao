@@ -17,6 +17,11 @@ public class HomeService {
     HomeMapper mapper;
 
     public List<HomeBannerSectionEntity> getAllHomeBannerSectionEntities(){
+//        List<HomeBannerSectionEntity> list= mapper.selectAllHomeBannerSectionEntity();
+//        for (HomeBannerSectionEntity item: list){
+//            item.setImgPath("http://localhost:8080"+item.getImgPath());
+//        }
+//        return list;
         return mapper.selectAllHomeBannerSectionEntity();
     }
 
@@ -25,7 +30,7 @@ public class HomeService {
     }
 
     public HomeChartSection getHomeChartSection(){
-        HomeChartSection homeChartSection = new HomeChartSection("title", "text", "./hello.jpg");
+        HomeChartSection homeChartSection = new HomeChartSection("title", "text", "images/resource/graph.png");
         return homeChartSection;
     }
 
