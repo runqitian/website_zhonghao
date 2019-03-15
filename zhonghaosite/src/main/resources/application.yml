@@ -1,11 +1,11 @@
 server:
-  port: 80
+  port: 8080
 
 spring:
   datasource:
     username: jingting
     password: pa$$w0rd
-    url: jdbc:mysql://zhonghaollc-db.c1xl8hxe4v20.us-east-2.rds.amazonaws.com:3306/zhonghaollc?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    url: jdbc:mysql://zhonghaollc-db.c1xl8hxe4v20.us-east-2.rds.amazonaws.com:3306/zhonghaollc
     driver-class-name: com.mysql.cj.jdbc.Driver
 
 mybatis:

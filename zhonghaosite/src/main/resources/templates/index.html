@@ -75,7 +75,7 @@
                             <div class="collapse navbar-collapse clearfix" id="navbarSupportedContent">
                                 <ul class="navigation clearfix">
                                     <li><a href="/home">Home</a></li>
-                                    <li><a href="about.html">About us</a></li>
+                                    <li><a href="/about">About us</a></li>
                                     <li class="dropdown"><a href="#">Solutions</a>
                                         <ul>
                                             <li><a href="services.html">All Services</a></li>
@@ -165,7 +165,7 @@
 
             <div class="row" id = "features_row">
                 <th:block th:each="featuresItem:${featuresList}">
-                    <div class="feature-block col-lg-4 col-md-6 col-sm-12 wow fadeInLeft" data-wow-delay="' + i*400 + 'ms">
+                    <div class="feature-block col-lg-6 col-md-6 col-sm-12 wow fadeInLeft" data-wow-delay="' + i*400 + 'ms">
                         <div class="inner-box">
                             <div class="image-box">
                                 <figure class="image"><a href="services.html"><img th:attr="src=${featuresItem.imgPath}" alt=""></a></figure>
@@ -188,7 +188,7 @@
             <div class="content-box">
                 <span class="title wow fadeInDown" data-wow-delay="0ms">OUR SHORT HISTORY</span>
                 <h2 class="wow fadeInUp" data-wow-delay="300ms">We have taken a technical approach to guide <br>innovative projects in complex markets.</h2>
-                <div class="btn-box wow fadeInUp" data-wow-delay="600ms"><a href="about.html" class="theme-btn btn-style-one">ABOUT US <i class="flaticon-right-arrow"></i></a></div>
+                <div class="btn-box wow fadeInUp" data-wow-delay="600ms"><a href="/about" class="theme-btn btn-style-one">ABOUT US <i class="flaticon-right-arrow"></i></a></div>
             </div>
         </div>
     </section>
@@ -289,8 +289,17 @@
 
             <div class="row">
                 <div class="column col-xl-6 col-lg-12 col-md-12 col-sm-12 wow fadeInLeft">
-                    <div class="image-box">
-                        <figure class="image"><img src="images/resource/image-1.jpg" alt=""></figure>
+                    <div class="service-block col-lg-12 col-md-12 col-sm-12 wow fadeIn" data-wow-delay="' + (i+1)*300 + 'ms">
+                        <div class="inner-box">
+                            <div class="icon-box"><figure class="image"><img th:src="${bannerBig.imgPath}" alt="" style="max-width: 50%;"></figure></div>
+                            <h3 class="left-box">11111111</h3>
+                            <div class="content-box">
+                                <div class="inner">
+                                    <div class="text">222222222222222</div>
+                                    <a href="service-single.html" class="read-more">Read more <i class="flaticon-right-arrow"></i></a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -299,7 +308,7 @@
                         <th:block th:each="serviceItem:${serviceList}">
                             <div class="service-block col-lg-6 col-md-6 col-sm-12 wow fadeIn" data-wow-delay="' + (i+1)*300 + 'ms">
                                 <div class="inner-box">
-                                    <div class="icon-box"><span class="icon flaticon-toy"></span></div>
+                                    <div class="icon-box"><figure class="image"><img th:attr="src=${serviceItem.imgPath}" alt="" style="max-width: 50%;"></figure></div>
                                     <h3 th:text="${serviceItem.title}"></h3>
                                     <div class="content-box">
                                         <div class="inner">
@@ -593,7 +602,7 @@
 <script src="/js/wow.js"></script>
 <script src="/js/appear.js"></script>
 <script src="/js/request.js"></script>
-<!--<script src="/js/index.js"></script>-->
+<script src="/js/index.js"></script>
 <!--<script th:inline="javascript">-->
     <!--function init(){-->
         <!--bannerInit([[${bannerList}]]);-->
