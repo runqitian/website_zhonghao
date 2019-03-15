@@ -23,16 +23,18 @@ public class MainController {
         model.addAttribute("bannerList", homeService.getAllHomeBannerSectionEntities());
         model.addAttribute("featuresList", homeService.getAllHomeFeaturesSectionEntities());
         model.addAttribute("chartInfo", homeService.getHomeChartSection());
-        List<HomeServicesSectionEntity> list = homeService.getAllHomeServicesSectionEntities();
-        model.addAttribute("serviceBig",list.get(0));
-        list.remove(list.get(0));
-        model.addAttribute("serviceList", list);
-        System.out.println(list);
+        model.addAttribute("serviceList", homeService.getAllHomeServicesSectionEntities());
         return "index";
     }
 
     @RequestMapping({"/about"})
     public String aboutPage(Model model){
+        String title = "title";
+        String text = "text";
+        String imgPath = "images/about/about.jpg";
+        model.addAttribute(title);
+        model.addAttribute(text);
+        model.addAttribute(imgPath);
         return "about";
     }
 
