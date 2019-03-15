@@ -288,25 +288,10 @@
             </div>
 
             <div class="row">
-                <div class="column col-xl-6 col-lg-12 col-md-12 col-sm-12 wow fadeInLeft">
-                    <div class="service-block col-lg-12 col-md-12 col-sm-12 wow fadeIn" data-wow-delay="' + (i+1)*300 + 'ms">
-                        <div class="inner-box">
-                            <div class="icon-box"><figure class="image"><img th:attr="src=${serviceBig.imgPath}" alt="" style="max-width: 50%;"></figure></div>
-                            <h3 class="left-box">11111111</h3>
-                            <div class="content-box">
-                                <div class="inner">
-                                    <div class="text">222222222222222</div>
-                                    <a href="service-single.html" class="read-more">Read more <i class="flaticon-right-arrow"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="column col-xl-6 col-lg-12 col-md-12 col-sm-12">
+                <div class="column col-xl-12 col-lg-12 col-md-12 col-sm-12">
                     <div class="row" id="services_row">
                         <th:block th:each="serviceItem:${serviceList}">
-                            <div class="service-block col-lg-6 col-md-6 col-sm-12 wow fadeIn" data-wow-delay="' + (i+1)*300 + 'ms">
+                            <div class="service-block col-lg-3 col-md-2 col-sm-6 wow fadeIn" data-wow-delay="' + (i+1)*300 + 'ms">
                                 <div class="inner-box">
                                     <div class="icon-box"><figure class="image"><img th:attr="src=${serviceItem.imgPath}" alt="" style="max-width: 50%;"></figure></div>
                                     <h3 th:text="${serviceItem.title}"></h3>
