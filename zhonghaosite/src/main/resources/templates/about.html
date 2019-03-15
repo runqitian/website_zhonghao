@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="utf-8">
 <title>Ankara - Consulting HTML Template | About Us</title>
@@ -153,7 +153,7 @@
     <!--End Page Title-->
 
     <!-- About Section -->
-    <section class="about-section-two">
+    <section class="about-section-two" hidden>
         <div class="outer-container clearfix">
             <!-- Content Column -->
             <div class="content-column clearfix">
@@ -243,163 +243,165 @@
                         <div class="inner-container">
                             <div class="history-carousel owl-carousel owl-theme">
                                 <!-- History Block -->
-                                <div class="history-block">
-                                    <div class="inner-box">
-                                        <div class="image-box">
-                                            <figure class="image"><img src="images/resource/history-1.jpg" alt=""></figure>
-                                            <div class="title-box"><h4>Diverse Approach</h4></div>
-                                        </div>
-                                        <div class="content-box">
-                                            <div class="inner">
-                                                <h4>Diverse Approach</h4>
-                                                <div class="text">On low hanging fruit to dentify a ballpark value added activity to bettest. Override the digital divide.</div>
+                                <th:block th:each="item:${historyList}">
+                                    <th:block th:if="${item.year} eq '1993'">
+                                        <div class="history-block">
+                                            <div class="inner-box">
+                                                <div class="image-box">
+                                                    <figure class="image"><img th:attr="src=${item.images}"  alt=""></figure>
+                                                    <div class="title-box"><h4>Diverse Approach</h4></div>
+                                                </div>
+                                                <div class="content-box">
+                                                    <div class="inner">
+                                                        <h4>Diverse Approach</h4>
+                                                        <div class="text">On low hanging fruit to dentify a ballpark value added activity to bettest. Override the digital divide.</div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
+                                    </th:block>
+                                    <th:block th:if="${item.year} eq '1995'">
+                                        <div class="history-block">
+                                            <div class="inner-box">
+                                                <div class="image-box">
+                                                    <figure class="image"><img th:attr="src=${item.images}"  alt=""></figure>
+                                                    <div class="title-box"><h4>Diverse Approach</h4></div>
+                                                </div>
+                                                <div class="content-box">
+                                                    <div class="inner">
+                                                        <h4>Diverse Approach</h4>
+                                                        <div class="text">On low hanging fruit to dentify a ballpark value added activity to bettest. Override the digital divide.</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </th:block>
+                                    <th:block th:if="${item.year} eq '1998'">
+                                        <div class="history-block">
+                                            <div class="inner-box">
+                                                <div class="image-box">
+                                                    <figure class="image"><img th:attr="src=${item.images}"  alt=""></figure>
+                                                    <div class="title-box"><h4>Diverse Approach</h4></div>
+                                                </div>
+                                                <div class="content-box">
+                                                    <div class="inner">
+                                                        <h4>Diverse Approach</h4>
+                                                        <div class="text">On low hanging fruit to dentify a ballpark value added activity to bettest. Override the digital divide.</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </th:block>
+                                </th:block>
+                                <!--<div class="history-block">-->
+                                    <!--<div class="inner-box">-->
+                                        <!--<div class="image-box">-->
+                                            <!--<figure class="image"><img src="images/resource/history-1.jpg" alt=""></figure>-->
+                                            <!--<div class="title-box"><h4>Diverse Approach</h4></div>-->
+                                        <!--</div>-->
+                                        <!--<div class="content-box">-->
+                                            <!--<div class="inner">-->
+                                                <!--<h4>Diverse Approach</h4>-->
+                                                <!--<div class="text">On low hanging fruit to dentify a ballpark value added activity to bettest. Override the digital divide.</div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
 
-                                <!-- History Block -->
-                                <div class="history-block">
-                                    <div class="inner-box">
-                                        <div class="image-box">
-                                            <figure class="image"><img src="images/resource/history-2.jpg" alt=""></figure>
-                                            <div class="title-box"><h4>Professional Team</h4></div>
-                                        </div>
-                                        <div class="content-box">
-                                            <div class="inner">
-                                                <h4>Professional Team</h4>
-                                                <div class="text">On low hanging fruit to dentify a ballpark value added activity to bettest. Override the digital divide.</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <!--&lt;!&ndash; History Block &ndash;&gt;-->
+                                <!--<div class="history-block">-->
+                                    <!--<div class="inner-box">-->
+                                        <!--<div class="image-box">-->
+                                            <!--<figure class="image"><img src="images/resource/history-2.jpg" alt=""></figure>-->
+                                            <!--<div class="title-box"><h4>Professional Team</h4></div>-->
+                                        <!--</div>-->
+                                        <!--<div class="content-box">-->
+                                            <!--<div class="inner">-->
+                                                <!--<h4>Professional Team</h4>-->
+                                                <!--<div class="text">On low hanging fruit to dentify a ballpark value added activity to bettest. Override the digital divide.</div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
 
-                                <!-- History Block -->
-                                <div class="history-block">
-                                    <div class="inner-box">
-                                        <div class="image-box">
-                                            <figure class="image"><img src="images/resource/history-3.jpg" alt=""></figure>
-                                            <div class="title-box"><h4>Result Based</h4></div>
-                                        </div>
-                                        <div class="content-box">
-                                            <div class="inner">
-                                                <h4>Result Based</h4>
-                                                <div class="text">On low hanging fruit to dentify a ballpark value added activity to bettest. Override the digital divide.</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <!--&lt;!&ndash; History Block &ndash;&gt;-->
+                                <!--<div class="history-block">-->
+                                    <!--<div class="inner-box">-->
+                                        <!--<div class="image-box">-->
+                                            <!--<figure class="image"><img src="images/resource/history-3.jpg" alt=""></figure>-->
+                                            <!--<div class="title-box"><h4>Result Based</h4></div>-->
+                                        <!--</div>-->
+                                        <!--<div class="content-box">-->
+                                            <!--<div class="inner">-->
+                                                <!--<h4>Result Based</h4>-->
+                                                <!--<div class="text">On low hanging fruit to dentify a ballpark value added activity to bettest. Override the digital divide.</div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
 
-                                <!-- History Block -->
-                                <div class="history-block">
-                                    <div class="inner-box">
-                                        <div class="image-box">
-                                            <figure class="image"><img src="images/resource/history-4.jpg" alt=""></figure>
-                                            <div class="title-box"><h4>Expert Advice</h4></div>
-                                        </div>
-                                        <div class="content-box">
-                                            <div class="inner">
-                                                <h4>Expert Advice</h4>
-                                                <div class="text">On low hanging fruit to dentify a ballpark value added activity to bettest. Override the digital divide.</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <!--&lt;!&ndash; History Block &ndash;&gt;-->
+                                <!--<div class="history-block">-->
+                                    <!--<div class="inner-box">-->
+                                        <!--<div class="image-box">-->
+                                            <!--<figure class="image"><img src="images/resource/history-4.jpg" alt=""></figure>-->
+                                            <!--<div class="title-box"><h4>Expert Advice</h4></div>-->
+                                        <!--</div>-->
+                                        <!--<div class="content-box">-->
+                                            <!--<div class="inner">-->
+                                                <!--<h4>Expert Advice</h4>-->
+                                                <!--<div class="text">On low hanging fruit to dentify a ballpark value added activity to bettest. Override the digital divide.</div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
 
-                                <!-- History Block -->
-                                <div class="history-block">
-                                    <div class="inner-box">
-                                        <div class="image-box">
-                                            <figure class="image"><img src="images/resource/history-5.jpg" alt=""></figure>
-                                            <div class="title-box"><h4>Saving Planning</h4></div>
-                                        </div>
-                                        <div class="content-box">
-                                            <div class="inner">
-                                                <h4>Saving Planning</h4>
-                                                <div class="text">On low hanging fruit to dentify a ballpark value added activity to bettest. Override the digital divide.</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- History Block -->
-                                <div class="history-block">
-                                    <div class="inner-box">
-                                        <div class="image-box">
-                                            <figure class="image"><img src="images/resource/history-1.jpg" alt=""></figure>
-                                            <div class="title-box"><h4>Diverse Approach</h4></div>
-                                        </div>
-                                        <div class="content-box">
-                                            <div class="inner">
-                                                <h4>Diverse Approach</h4>
-                                                <div class="text">On low hanging fruit to dentify a ballpark value added activity to bettest. Override the digital divide.</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <!--&lt;!&ndash; History Block &ndash;&gt;-->
+                                <!--<div class="history-block">-->
+                                    <!--<div class="inner-box">-->
+                                        <!--<div class="image-box">-->
+                                            <!--<figure class="image"><img src="images/resource/history-5.jpg" alt=""></figure>-->
+                                            <!--<div class="title-box"><h4>Saving Planning</h4></div>-->
+                                        <!--</div>-->
+                                        <!--<div class="content-box">-->
+                                            <!--<div class="inner">-->
+                                                <!--<h4>Saving Planning</h4>-->
+                                                <!--<div class="text">On low hanging fruit to dentify a ballpark value added activity to bettest. Override the digital divide.</div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--&lt;!&ndash; History Block &ndash;&gt;-->
+                                <!--<div class="history-block">-->
+                                    <!--<div class="inner-box">-->
+                                        <!--<div class="image-box">-->
+                                            <!--<figure class="image"><img src="images/resource/history-1.jpg" alt=""></figure>-->
+                                            <!--<div class="title-box"><h4>Diverse Approach</h4></div>-->
+                                        <!--</div>-->
+                                        <!--<div class="content-box">-->
+                                            <!--<div class="inner">-->
+                                                <!--<h4>Diverse Approach</h4>-->
+                                                <!--<div class="text">On low hanging fruit to dentify a ballpark value added activity to bettest. Override the digital divide.</div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
 
-                                <!-- History Block -->
-                                <div class="history-block">
-                                    <div class="inner-box">
-                                        <div class="image-box">
-                                            <figure class="image"><img src="images/resource/history-2.jpg" alt=""></figure>
-                                            <div class="title-box"><h4>Professional Team</h4></div>
-                                        </div>
-                                        <div class="content-box">
-                                            <div class="inner">
-                                                <h4>Professional Team</h4>
-                                                <div class="text">On low hanging fruit to dentify a ballpark value added activity to bettest. Override the digital divide.</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- History Block -->
-                                <div class="history-block">
-                                    <div class="inner-box">
-                                        <div class="image-box">
-                                            <figure class="image"><img src="images/resource/history-3.jpg" alt=""></figure>
-                                            <div class="title-box"><h4>Result Based</h4></div>
-                                        </div>
-                                        <div class="content-box">
-                                            <div class="inner">
-                                                <h4>Result Based</h4>
-                                                <div class="text">On low hanging fruit to dentify a ballpark value added activity to bettest. Override the digital divide.</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- History Block -->
-                                <div class="history-block">
-                                    <div class="inner-box">
-                                        <div class="image-box">
-                                            <figure class="image"><img src="images/resource/history-4.jpg" alt=""></figure>
-                                            <div class="title-box"><h4>Expert Advice</h4></div>
-                                        </div>
-                                        <div class="content-box">
-                                            <div class="inner">
-                                                <h4>Expert Advice</h4>
-                                                <div class="text">On low hanging fruit to dentify a ballpark value added activity to bettest. Override the digital divide.</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- History Block -->
-                                <div class="history-block">
-                                    <div class="inner-box">
-                                        <div class="image-box">
-                                            <figure class="image"><img src="images/resource/history-5.jpg" alt=""></figure>
-                                            <div class="title-box"><h4>Saving Planning</h4></div>
-                                        </div>
-                                        <div class="content-box">
-                                            <div class="inner">
-                                                <h4>Saving Planning</h4>
-                                                <div class="text">On low hanging fruit to dentify a ballpark value added activity to bettest. Override the digital divide.</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <!--&lt;!&ndash; History Block &ndash;&gt;-->
+                                <!--<div class="history-block">-->
+                                    <!--<div class="inner-box">-->
+                                        <!--<div class="image-box">-->
+                                            <!--<figure class="image"><img src="images/resource/history-2.jpg" alt=""></figure>-->
+                                            <!--<div class="title-box"><h4>Professional Team</h4></div>-->
+                                        <!--</div>-->
+                                        <!--<div class="content-box">-->
+                                            <!--<div class="inner">-->
+                                                <!--<h4>Professional Team</h4>-->
+                                                <!--<div class="text">On low hanging fruit to dentify a ballpark value added activity to bettest. Override the digital divide.</div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
                             </div>
                         </div>
                     </div>
@@ -1764,6 +1766,6 @@
 <script src="js/owl.js"></script>
 <script src="js/wow.js"></script>
 <script src="js/appear.js"></script>
-<script src="js/script.js"></script>
+<script src="js/script.js"></script>F
 </body>
 </html>
