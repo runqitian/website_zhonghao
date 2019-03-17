@@ -101,7 +101,7 @@
                                             <li><a href="error-page.html">404 Error Page</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="/contact">Contact</a></li>
                                 </ul>
                             </div>
                         </nav>
@@ -291,7 +291,7 @@
                 <div class="column col-xl-12 col-lg-12 col-md-12 col-sm-12">
                     <div class="row" id="services_row">
                         <th:block th:each="serviceItem:${serviceList}">
-                            <div class="service-block col-lg-3 col-md-2 col-sm-6 wow fadeIn" data-wow-delay="' + (i+1)*300 + 'ms">
+                            <div class="service-block col-lg-2 col-md-2 col-sm-6 wow fadeIn" data-wow-delay="' + (i+1)*300 + 'ms" style="margin-left: 35px">
                                 <div class="inner-box">
                                     <div class="icon-box"><figure class="image"><img th:attr="src=${serviceItem.imgPath}" alt="" style="max-width: 50%;"></figure></div>
                                     <h3 th:text="${serviceItem.title}"></h3>
@@ -469,18 +469,18 @@
                 <div class="form-column col-xl-6 col-lg-12 col-md-6 col-sm-12">
                     <div class="inner-column">
                         <div class="callback-form">
-                            <form method="post" action="index.html">
+                            <form id="msgForm" method="get" action="home/sendMsg">
                                 <div class="row">
                                     <div class="form-group col-lg-6 col-md-6 col-sm-12">
-                                        <input type="text" name="username" placeholder="Your Name" required="">
+                                        <input type="text" id="username" name="username" placeholder="Your Name" required="" value="username">
                                     </div>
-                                    
+
                                     <div class="form-group col-lg-6 col-md-6 col-sm-12">
-                                        <input type="email" name="email" placeholder="Your Email" required="">
+                                        <input type="email" id="email" name="email" placeholder="Your Email" required="" value="email">
                                     </div>
 
                                     <div class="form-group col-lg-12 col-md-12 col-sm-12">
-                                        <textarea name="message" placeholder="Your Message"></textarea>
+                                        <textarea name="message" id="message" placeholder="Your Message" value="message"></textarea>
                                     </div>
 
                                     <div class="form-group col-lg-12 col-md-12 col-sm-12">
@@ -596,7 +596,6 @@
 <script src="/js/owl.js"></script>
 <script src="/js/wow.js"></script>
 <script src="/js/appear.js"></script>
-<script src="/js/request.js"></script>
 <script src="/js/index.js"></script>
 <!--<script th:inline="javascript">-->
     <!--function init(){-->

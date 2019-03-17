@@ -32,10 +32,14 @@ public class MainController {
         String title = "title";
         String text = "text";
         String imgPath = "images/about/about.jpg";
-        model.addAttribute(title);
-        model.addAttribute(text);
-        model.addAttribute(imgPath);
+        model.addAttribute("title", title);
+        model.addAttribute("text", text);
+        model.addAttribute("imgPath",imgPath);
         return "about";
     }
 
+    @RequestMapping({"/contact"})
+    public String contactPage(Model model){
+        return "contact";
+    }
 }
