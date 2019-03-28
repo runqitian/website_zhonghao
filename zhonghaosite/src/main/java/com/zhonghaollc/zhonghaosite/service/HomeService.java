@@ -30,7 +30,11 @@ public class HomeService {
     }
 
     public HomeChartSection getHomeChartSection(){
-        HomeChartSection homeChartSection = new HomeChartSection("title", "text", "images/resource/graph.png");
+        HomeChartSection homeChartSection = new HomeChartSection("U.S. International Trade in Goods and Services", "Now being impacted by the global economy, trading goods and services among different countries has been " +
+                "a significant part for business. According to the data from Bureau of Economic Analysis, exports were " +
+                "$2,500.0 billion in 2018, up $148.9 billion from 2017. Imports were $3,121.0 billion, up $217.7 billion from 2017. " +
+                "Even though trading business is absolutely affected by the policy preference and economic trends, it still " +
+                "demonstrates a increasing lines in not only exports but also imports of US.", "images/home/chart/chart.png");
         return homeChartSection;
     }
 
