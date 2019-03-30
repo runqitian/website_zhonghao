@@ -19,6 +19,7 @@ public class MainController {
     @RequestMapping({"/home","/"})
     public String homepage(Model model){
         String name = "runqi";
+
         model.addAttribute("name", name);
         model.addAttribute("bannerList", homeService.getAllHomeBannerSectionEntities());
         model.addAttribute("featuresList", homeService.getAllHomeFeaturesSectionEntities());
@@ -27,7 +28,7 @@ public class MainController {
         return "index";
     }
 
-    @RequestMapping({"/about"})
+    @RequestMapping("/about")
     public String aboutPage(Model model){
         String title = "title";
         String text = "text";
@@ -37,6 +38,9 @@ public class MainController {
         model.addAttribute("imgPath",imgPath);
         return "about";
     }
+
+
+
 
     @RequestMapping({"/contact"})
     public String contactPage(Model model){
