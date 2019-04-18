@@ -39,11 +39,21 @@ public class MainController {
         return "about";
     }
 
-
-
-
     @RequestMapping({"/contact"})
     public String contactPage(Model model){
         return "contact";
+    }
+
+
+    @RequestMapping("/service")
+    public String solutionPage(Model model){
+        System.out.println("get");
+        return "service-single";
+    }
+
+    @RequestMapping("/services")
+    public String solutionsPage(Model model){
+        System.out.println("get");
+        return "services";
     }
 }
