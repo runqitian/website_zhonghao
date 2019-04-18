@@ -1922,7 +1922,7 @@ img{
 .about-section-two .features-column .inner-column{
 	position: absolute;
 	left: 0;
-	top: 0;
+	top: 87px;
 	height: 100%;
 	width: 100%;
 	display: table;

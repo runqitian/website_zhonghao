@@ -292,9 +292,12 @@
                 <div class="column col-xl-12 col-lg-12 col-md-12 col-sm-12">
                     <div class="row" id="services_row">
                         <th:block th:each="serviceItem:${serviceList}">
-                            <div class="service-block col-lg-2 col-md-2 col-sm-6 wow fadeIn" data-wow-delay="' + (i+1)*300 + 'ms" style="margin-left: 35px">
+                            <div class="service-block col-lg-2 col-md-2 col-sm-6 wow fadeIn" data-wow-delay="' + (i+1)*300 + 'ms" style="margin-left: 35px;">
                                 <div class="inner-box">
                                     <div class="icon-box"><figure class="image"><img th:attr="src=${serviceItem.imgPath}" alt="" style="max-width: 50%;"></figure></div>
+                                    <!--<h3>Supplier</h3>-->
+                                    <!--<h3>&</h3>-->
+                                    <!--<h3>buyer identification</h3>-->
                                     <h3 th:text="${serviceItem.title}"></h3>
                                     <div class="content-box">
                                         <div class="inner">
