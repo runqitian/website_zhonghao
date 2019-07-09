@@ -6,28 +6,28 @@ import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.model.GetObjectRequest;
 import com.amazonaws.services.s3.model.S3Object;
 import org.springframework.stereotype.Component;
-import org.thymeleaf.TemplateEngine;
-import org.thymeleaf.context.Context;
-import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
 
 import java.io.*;
 
 @Component
 public class S3AccessObject {
-
+    static{
+    }
     private AmazonS3 s3 = null;
 
     public S3AccessObject(){
-        System.setProperty(SDKGlobalConfiguration.ENABLE_S3_SIGV4_SYSTEM_PROPERTY, "true");
         s3 = new AmazonS3Client();
         System.setProperty(SDKGlobalConfiguration.ENABLE_S3_SIGV4_SYSTEM_PROPERTY, "true");
     }
 
     public void updateIndexDownload() throws IOException {
-        System.setProperty(SDKGlobalConfiguration.ENABLE_S3_SIGV4_SYSTEM_PROPERTY, "true");
-        S3Object indexHtml = s3.getObject(new GetObjectRequest("zhonghaollc", "modify/templates/index.html"));
+        S3Object indexHtml = s3.getObject(new GetObjectRequest("zhonghaollc", "website-resource/modify/templates/index.html"));
         indexHtml.getObjectContent();
-        S3AccessObject.writeInputStream(indexHtml.getObjectContent(),"demo.html");
+        S3AccessObject.writeInputStream(indexHtml.getObjectContent(),"./demo.html");
+    }
+
+    public void updateContactDownload() throws Exception{
+
     }
 
     private static void writeInputStream(InputStream input, String writePath){
