@@ -20,7 +20,7 @@ public class UpdateService {
 
     public void updateIndex() throws IOException, TemplateException {
 
-//        s3AccessObject.updateIndexDownload();
+        s3AccessObject.updateIndexDownload();
 
         // 1. Configure FreeMarker
         //
@@ -45,6 +45,7 @@ public class UpdateService {
         // 2.1. Prepare the template input:
 
         Map<String, Object> input = new HashMap<String, Object>();
+
 
         input.put("banner", new HomeBannerSectionEntity("sub","MAIN","text","imag"));
 

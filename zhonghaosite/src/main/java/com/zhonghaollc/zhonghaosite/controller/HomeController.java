@@ -1,6 +1,7 @@
 package com.zhonghaollc.zhonghaosite.controller;
 
 
+import com.sun.xml.internal.ws.developer.Serialization;
 import com.zhonghaollc.zhonghaosite.dao.S3AccessObject;
 import com.zhonghaollc.zhonghaosite.entity.HomeBannerSectionEntity;
 import com.zhonghaollc.zhonghaosite.entity.HomeChartSection;
@@ -36,6 +37,11 @@ public class HomeController {
         }
         return "success";
     }
+
+//    @GetMapping("/contact/new")
+//    public String contact(){
+//
+//    }
 
 
 

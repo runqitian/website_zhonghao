@@ -1,6 +1,7 @@
 package com.zhonghaollc.zhonghaosite;
 
 //import org.mybatis.spring.annotation.MapperScan;
+import com.amazonaws.SDKGlobalConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,6 +13,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 public class ZhonghaositeApplication {
 
     public static void main(String[] args) {
+        System.setProperty(SDKGlobalConfiguration.ENABLE_S3_SIGV4_SYSTEM_PROPERTY, "true");
         SpringApplication.run(ZhonghaositeApplication.class, args);
 
     }
