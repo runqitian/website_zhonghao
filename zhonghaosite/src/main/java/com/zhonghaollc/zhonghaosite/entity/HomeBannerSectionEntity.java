@@ -1,59 +1,43 @@
 package com.zhonghaollc.zhonghaosite.entity;
 
 public class HomeBannerSectionEntity {
-    private String title1;
-    private String title2;
-    private String title3;
+    private String subTitle;
+    private String mainTitle;
+    private String text;
     private String imgPath;
 
     public HomeBannerSectionEntity() {
     }
 
-    public HomeBannerSectionEntity(String title1, String title2, String title3, String imgPath) {
-        this.title1 = title1;
-        this.title2 = title2;
-        this.title3 = title3;
+    public HomeBannerSectionEntity(String subTitle, String mainTitle, String text, String imgPath) {
+        this.subTitle = subTitle;
+        this.mainTitle = mainTitle;
+        this.text = text;
         this.imgPath = imgPath;
     }
 
-    public String getTitle1() {
-        return title1;
+    public String getSubTitle() {
+        return subTitle;
     }
 
-    public void setTitle1(String title1) {
-        this.title1 = title1;
+    public String getMainTitle() {
+        return mainTitle;
     }
 
-    public String getTitle2() {
-        return title2;
-    }
-
-    public void setTitle2(String title2) {
-        this.title2 = title2;
-    }
-
-    public String getTitle3() {
-        return title3;
-    }
-
-    public void setTitle3(String title3) {
-        this.title3 = title3;
+    public String getText() {
+        return text;
     }
 
     public String getImgPath() {
         return imgPath;
     }
 
-    public void setImgPath(String imgPath) {
-        this.imgPath = imgPath;
-    }
-
     @Override
     public String toString() {
         return "HomeBannerSectionEntity{" +
-                "title1='" + title1 + '\'' +
-                ", title2='" + title2 + '\'' +
-                ", title3='" + title3 + '\'' +
+                "subTitle='" + subTitle + '\'' +
+                ", mainTitle='" + mainTitle + '\'' +
+                ", text='" + text + '\'' +
                 ", imgPath='" + imgPath + '\'' +
                 '}';
     }

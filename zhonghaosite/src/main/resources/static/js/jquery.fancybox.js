@@ -4732,7 +4732,7 @@
 			list += '</ul>';
 
 			self.$list = $( list ).appendTo( self.$grid ).on('click', 'li', function() {
-				instance.jumpTo( $(this).data('index') );
+				instance.jumpTo( $(this).data('templates.index') );
 			});
 
 			self.$list.find( 'img' ).hide().one('load', function() {

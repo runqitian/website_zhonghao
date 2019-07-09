@@ -1,44 +1,43 @@
 package com.zhonghaollc.zhonghaosite.controller;
 
 
+import com.zhonghaollc.zhonghaosite.dao.S3AccessObject;
 import com.zhonghaollc.zhonghaosite.entity.HomeBannerSectionEntity;
 import com.zhonghaollc.zhonghaosite.entity.HomeChartSection;
 import com.zhonghaollc.zhonghaosite.entity.HomeFeaturesSectionEntity;
 import com.zhonghaollc.zhonghaosite.entity.HomeServicesSectionEntity;
 import com.zhonghaollc.zhonghaosite.service.HomeService;
+import com.zhonghaollc.zhonghaosite.service.UpdateService;
+import freemarker.template.TemplateException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/home")
+@RequestMapping("/api")
 public class HomeController {
 
     @Autowired
-    HomeService homeService;
+    UpdateService updateService;
 
-    @GetMapping("/bannersectioninit")
-    public List<HomeBannerSectionEntity> bannerSectionInit(){
-        return homeService.getAllHomeBannerSectionEntities();
+
+    @GetMapping("/index/new")
+    public String hello(){
+        try {
+            updateService.updateIndex();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (TemplateException e) {
+            e.printStackTrace();
+        }
+        return "success";
     }
 
-    @GetMapping("/featuressectioninit")
-    public List<HomeFeaturesSectionEntity> featuresSectionInit(){
-        return homeService.getAllHomeFeaturesSectionEntities();
-    }
 
-    @GetMapping("/chartsectioninit")
-    public HomeChartSection homeChartSectionInit(){
-        return homeService.getHomeChartSection();
-    }
-
-    @GetMapping("/servicessectioninit")
-    public List<HomeServicesSectionEntity> homeServicesSectionInit(){
-        return homeService.getAllHomeServicesSectionEntities();
-    }
 
 
 }
