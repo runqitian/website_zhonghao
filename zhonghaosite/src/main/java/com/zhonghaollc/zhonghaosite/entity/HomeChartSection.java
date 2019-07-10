@@ -4,15 +4,25 @@ public class HomeChartSection {
     private String title;
     private String text;
     private String imgPath;
+    private String imgDeclare;
 
     public HomeChartSection(){
 
     }
 
-    public HomeChartSection(String title, String text, String imgPath) {
+    public String getImgDeclare() {
+        return imgDeclare;
+    }
+
+    public void setImgDeclare(String imgDeclare) {
+        this.imgDeclare = imgDeclare;
+    }
+
+    public HomeChartSection(String title, String text, String imgPath, String imgDeclare) {
         this.title = title;
         this.text = text;
         this.imgPath = imgPath;
+        this.imgDeclare = imgDeclare;
     }
 
     public String getTitle() {
@@ -45,6 +55,7 @@ public class HomeChartSection {
                 "title='" + title + '\'' +
                 ", text='" + text + '\'' +
                 ", imgPath='" + imgPath + '\'' +
+                ", imgDeclare='" + imgDeclare + '\'' +
                 '}';
     }
 }

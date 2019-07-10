@@ -76,6 +76,14 @@
 
     </dependencies>
 
+    <repositories>
+        <repository>
+            <id>alimaven</id>
+            <name>aliyun maven</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+        </repository>
+    </repositories>
+
     <build>
         <plugins>
             <!-- 指定启动类，将依赖打成外部jar包 -->
