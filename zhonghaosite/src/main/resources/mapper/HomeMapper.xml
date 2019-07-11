@@ -2,16 +2,14 @@
 <!--<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">-->
 <!--<mapper namespace="com.zhonghaollc.zhonghaosite.mapper.HomeMapper">-->
 
-<!--    <select id="selectAllHomeBannerSectionEntity" resultType="com.zhonghaollc.zhonghaosite.entity.HomeBannerSectionEntity">-->
+<!--    <select id="selectAllHomeBannerSectionEntity" resultType="com.zhonghaollc.zhonghaosite.entity.index.HomeBannerSectionEntity">-->
 <!--        select * from HomeBannerSectionEntity-->
 <!--    </select>-->
 
-<!--    <select id="selectAllHomeFeaturesSectionEntity" resultType="com.zhonghaollc.zhonghaosite.entity.HomeFeaturesSectionEntity">-->
-<!--        select * from HomeFeaturesSectionEntity-->
+<!--    <select id="selectAllHomeFeaturesSectionEntity" resultType="com.zhonghaollc.zhonghaosite.entity.index.Featureselect * from Feature-->
 <!--    </select>-->
 
-<!--    <select id="selectAllHomeServicesSectionEntity" resultType="com.zhonghaollc.zhonghaosite.entity.HomeServicesSectionEntity">-->
-<!--        select * from HomeServicesSectionEntity-->
+<!--    <select id="selectAllHomeServicesSectionEntity" resultType="com.zhonghaollc.zhonghaosite.entity.index.Serviceselect * from Service-->
 <!--    </select>-->
 
 <!--</mapper>-->

@@ -30,12 +30,12 @@
 <body>
 <div class="page-wrapper">
 
-    <#include "./header-template.ftl">
+    <#include "./header.ftl">
 
     <!-- Bnner Section -->
     <section class="banner-section">
         <div class="banner-carousel owl-carousel owl-theme" id="banner_div">
-
+            <#list indexPage.banners as banner>
             <!-- Slide Item -->
             <div class="slide-item" style="background-image: url(${banner.imgPath});">
                 <div class="auto-container">
@@ -49,6 +49,7 @@
                     </div>
                 </div>
             </div>
+            </#list>
 
         </div>
     </section>
@@ -62,7 +63,7 @@
             </div>
 
             <div class="row" id="features_row">
-                <#list featureList as feature>
+                <#list indexPage.features as feature>
                     <div class="feature-block col-lg-5 col-md-5 col-sm-12 wow fadeInLeft col-center-block">
                         <div class="inner-box">
                             <div class="image-box">
@@ -87,9 +88,11 @@
     <section class="history-section" style="background-image: url(images/background/1.jpg);">
         <div class="auto-container">
             <div class="content-box">
-                <span class="title wow fadeInDown" data-wow-delay="0ms">${history.title}</span>
-                <h2 class="wow fadeInUp" data-wow-delay="300ms">${history.text}</h2>
+                <#list indexPage.history as historyonly>
+                <span class="title wow fadeInDown" data-wow-delay="0ms">${historyonly.title}</span>
+                <h2 class="wow fadeInUp" data-wow-delay="300ms">${historyonly.text}</h2>
                 <div class="btn-box wow fadeInUp" data-wow-delay="600ms"><a href="/about" class="theme-btn btn-style-one">ABOUT US <i class="flaticon-right-arrow"></i></a></div>
+                </#list>
             </div>
         </div>
     </section>
@@ -99,12 +102,13 @@
     <section class="chart-section">
         <div class="auto-container">
             <div class="row" id="chart_row">
+                <#list indexPage.chart as chartonly>
                 <div class="content-column col-lg-6 col-md-12 col-sm-12">
                     <div class="inner-column">
                         <div class="sec-title wow fadeInLeft" data-wow-delay="0ms">
-                            <h2>${chart.title}</h2>
+                            <h2>${chartonly.title}</h2>
                         </div>
-                        <div class="text wow fadeInLeft" data-wow-delay="300ms">${chart.text}</div>
+                        <div class="text wow fadeInLeft" data-wow-delay="300ms">${chartonly.text}</div>
                         <div class="link-box wow fadeInLeft" data-wow-delay="600ms"><a href="/about" class="theme-btn btn-style-two">VIEW STATS <i class="flaticon-right-arrow"></i></a></div>
                     </div>
                 </div>
@@ -112,10 +116,11 @@
                 <!-- Graph Column -->
                 <div class="graph-column col-lg-6 col-md-12 col-sm-12 wow fadeIn">
                     <div class="inner-column wow fadeInRight" data-wow-delay="900ms">
-                        <figure class="graph-image"><img alt="" src="${chart.imgPath}"></figure>
-                        <p><br>${chart.imgDeclare}</p>
+                        <figure class="graph-image"><img alt="" src="${chartonly.imgPath}"></figure>
+                        <p><br>${chartonly.imgDeclare}</p>
                     </div>
                 </div>
+                </#list>
             </div>
         </div>
     </section>
@@ -192,7 +197,7 @@
             <div class="row">
                 <div class="column col-xl-12 col-lg-12 col-md-12 col-sm-12">
                     <div class="row" id="services_row">
-                        <#list serviceList as service>
+                        <#list indexPage.services as service>
                             <div class="service-block col-lg-2 col-md-2 col-sm-6 wow fadeIn" data-wow-delay="' + (i+1)*300 + 'ms" style="margin-left: 35px;">
                                 <div class="inner-box">
                                     <div class="icon-box"><figure class="image"><img src="${service.imgPath}" alt="" style="max-width: 50%;"></figure></div>
@@ -401,83 +406,7 @@
     </section>
     <!--End Call Back Section -->
 
-    <!-- Main Footer -->
-    <footer class="main-footer">
-        <!--Widgets Section-->
-        <div class="widgets-section">
-            <div class="auto-container">
-                <div class="row">
-                    <!--Big Column-->
-                    <div class="big-column col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                        <div class="row">
-                            <!--Footer Column-->
-                            <div class="footer-column col-md-12">
-                                <div class="footer-widget about-widget">
-                                    <div class="footer-logo">
-                                        <figure>
-                                            <a href="index.html"><img src="images/footer-logo.png" alt="" style="width:300px;height:100px;"></a>
-                                        </figure>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--Big Column-->
-                    <div class="big-column col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                        <div class="row clearfix">
-                            <!--Footer Column-->
-                            <div class="footer-column col-lg-6 col-md-6 col-sm-12">
-
-                            </div>
-
-                            <div class="footer-column col-lg-6 col-md-6 col-sm-12">
-                                <!--Footer Column-->
-                                <div class="footer-widget info-widget">
-                                    <h4 class="widget-title">Work Time ;</h4>
-                                    <div class="widget-content">
-                                        <ul class="shedule">
-                                            <li>Mon - Fri: 9:00 - 19:00</li>
-                                            <li>Closed on Weekends</li>
-                                        </ul>
-
-                                        <div class="social-links">
-                                            <h2 class="widget-title">Follow Us ;</h2>
-                                            <ul class="social-icon-two">
-                                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!--Footer Bottom-->
-        <div class="footer-bottom">
-            <div class="auto-container">
-                <div class="inner-container clearfix">
-                    <ul class="footer-nav">
-                        <li><a href="#">PRIVACY</a></li>
-                        <li><a href="#">POLICYTERMS</a></li>
-                        <li><a href="#">CONDITIONS</a></li>
-                    </ul>
-
-                    <div class="copyright-text">
-                        <p>&copy; All rights reserved.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- End Main Footer -->
+    <#include "./footer.ftl">
 
 </div>  
 <!--End pagewrapper-->

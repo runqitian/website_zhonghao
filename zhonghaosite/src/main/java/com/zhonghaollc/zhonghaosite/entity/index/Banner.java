@@ -1,15 +1,15 @@
-package com.zhonghaollc.zhonghaosite.entity;
+package com.zhonghaollc.zhonghaosite.entity.index;
 
-public class HomeBannerSectionEntity {
+public class Banner {
     private String subTitle;
     private String mainTitle;
     private String text;
     private String imgPath;
 
-    public HomeBannerSectionEntity() {
+    public Banner() {
     }
 
-    public HomeBannerSectionEntity(String subTitle, String mainTitle, String text, String imgPath) {
+    public Banner(String subTitle, String mainTitle, String text, String imgPath) {
         this.subTitle = subTitle;
         this.mainTitle = mainTitle;
         this.text = text;
@@ -20,21 +20,37 @@ public class HomeBannerSectionEntity {
         return subTitle;
     }
 
+    public void setSubTitle(String subTitle) {
+        this.subTitle = subTitle;
+    }
+
     public String getMainTitle() {
         return mainTitle;
+    }
+
+    public void setMainTitle(String mainTitle) {
+        this.mainTitle = mainTitle;
     }
 
     public String getText() {
         return text;
     }
 
+    public void setText(String text) {
+        this.text = text;
+    }
+
     public String getImgPath() {
         return imgPath;
     }
 
+    public void setImgPath(String imgPath) {
+        this.imgPath = imgPath;
+    }
+
     @Override
     public String toString() {
-        return "HomeBannerSectionEntity{" +
+        return "Banner{" +
                 "subTitle='" + subTitle + '\'' +
                 ", mainTitle='" + mainTitle + '\'' +
                 ", text='" + text + '\'' +

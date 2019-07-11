@@ -1,8 +1,8 @@
 package com.zhonghaollc.zhonghaosite.mapper;
 
-//import com.zhonghaollc.zhonghaosite.entity.HomeBannerSectionEntity;
-//import com.zhonghaollc.zhonghaosite.entity.HomeFeaturesSectionEntity;
-//import com.zhonghaollc.zhonghaosite.entity.HomeServicesSectionEntity;
+//import com.zhonghaollc.zhonghaosite.entity.index.HomeBannerSectionEntity;
+//import com.zhonghaollc.zhonghaosite.entity.index.Feature;
+//import com.zhonghaollc.zhonghaosite.entity.index.Service;
 //import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -12,8 +12,8 @@ import java.util.List;
 //
 //    List<HomeBannerSectionEntity> selectAllHomeBannerSectionEntity();
 //
-//    List<HomeFeaturesSectionEntity> selectAllHomeFeaturesSectionEntity();
+//    List<Feature> selectAllHomeFeaturesSectionEntity();
 //
-//    List<HomeServicesSectionEntity> selectAllHomeServicesSectionEntity();
+//    List<Service> selectAllHomeServicesSectionEntity();
 //
 //}

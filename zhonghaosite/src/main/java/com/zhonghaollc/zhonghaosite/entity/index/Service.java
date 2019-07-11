@@ -1,28 +1,18 @@
-package com.zhonghaollc.zhonghaosite.entity;
+package com.zhonghaollc.zhonghaosite.entity.index;
 
-public class HomeChartSection {
+public class Service {
+
     private String title;
     private String text;
     private String imgPath;
-    private String imgDeclare;
 
-    public HomeChartSection(){
-
+    public Service(){
     }
 
-    public String getImgDeclare() {
-        return imgDeclare;
-    }
-
-    public void setImgDeclare(String imgDeclare) {
-        this.imgDeclare = imgDeclare;
-    }
-
-    public HomeChartSection(String title, String text, String imgPath, String imgDeclare) {
+    public Service(String title, String text, String imgPath) {
         this.title = title;
         this.text = text;
         this.imgPath = imgPath;
-        this.imgDeclare = imgDeclare;
     }
 
     public String getTitle() {
@@ -51,11 +41,10 @@ public class HomeChartSection {
 
     @Override
     public String toString() {
-        return "HomeChartSection{" +
+        return "Service{" +
                 "title='" + title + '\'' +
                 ", text='" + text + '\'' +
                 ", imgPath='" + imgPath + '\'' +
-                ", imgDeclare='" + imgDeclare + '\'' +
                 '}';
     }
 }
