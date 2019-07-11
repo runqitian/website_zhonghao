@@ -1,12 +1,12 @@
-package com.zhonghaollc.zhonghaosite.entity;
+package com.zhonghaollc.zhonghaosite.entity.index;
 
-public class HomeHistorySectionEntity {
+public class History {
     private String title;
     private String text;
 
-    public HomeHistorySectionEntity(){}
+    public History(){}
 
-    public HomeHistorySectionEntity(String title, String text) {
+    public History(String title, String text) {
         this.title = title;
         this.text = text;
     }
@@ -21,7 +21,7 @@ public class HomeHistorySectionEntity {
 
     @Override
     public String toString() {
-        return "HomeHistorySectionEntity{" +
+        return "History{" +
                 "title='" + title + '\'' +
                 ", text='" + text + '\'' +
                 '}';

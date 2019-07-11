@@ -1,16 +1,16 @@
-package com.zhonghaollc.zhonghaosite.entity;
+package com.zhonghaollc.zhonghaosite.entity.index;
 
-public class HomeFeaturesSectionEntity {
+public class Feature {
 
     private String title;
     private String text;
     private String imgPath;
 
-    public HomeFeaturesSectionEntity(){
+    public Feature(){
 
     }
 
-    public HomeFeaturesSectionEntity(String title, String text, String imgPath) {
+    public Feature(String title, String text, String imgPath) {
         this.title = title;
         this.text = text;
         this.imgPath = imgPath;
@@ -42,7 +42,7 @@ public class HomeFeaturesSectionEntity {
 
     @Override
     public String toString() {
-        return "HomeFeaturesSectionEntity{" +
+        return "Feature{" +
                 "title='" + title + '\'' +
                 ", text='" + text + '\'' +
                 ", imgPath='" + imgPath + '\'' +

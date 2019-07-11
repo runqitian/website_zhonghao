@@ -4,6 +4,14 @@ server:
 tmp:
   temporary
 
+s3prefix:
+  website-resource/modify
+
+s3bucket:
+  zhonghaollc
+
+
+
 #spring:
 
 ##showSql

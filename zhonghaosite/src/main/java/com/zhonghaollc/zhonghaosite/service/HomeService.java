@@ -1,15 +1,7 @@
 package com.zhonghaollc.zhonghaosite.service;
 
-import com.zhonghaollc.zhonghaosite.entity.HomeBannerSectionEntity;
-import com.zhonghaollc.zhonghaosite.entity.HomeChartSection;
-import com.zhonghaollc.zhonghaosite.entity.HomeFeaturesSectionEntity;
-import com.zhonghaollc.zhonghaosite.entity.HomeServicesSectionEntity;
 //import com.zhonghaollc.zhonghaosite.mapper.HomeMapper;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
 
 //@Service
 public class HomeService {
@@ -29,13 +21,13 @@ public class HomeService {
 //    }
 //
 //
-//    public List<HomeFeaturesSectionEntity> getAllHomeFeaturesSectionEntities(){
+//    public List<Feature> getAllHomeFeaturesSectionEntities(){
 ////        return mapper.selectAllHomeFeaturesSectionEntity();
-//        return new ArrayList<HomeFeaturesSectionEntity>();
+//        return new ArrayList<Feature>();
 //    }
 //
-//    public HomeChartSection getHomeChartSection(){
-//        HomeChartSection homeChartSection = new HomeChartSection("U.S. International Trade in Goods and Services", "Now being impacted by the global economy, trading goods and services among different countries has been " +
+//    public Chart getHomeChartSection(){
+//        Chart homeChartSection = new Chart("U.S. International Trade in Goods and Services", "Now being impacted by the global economy, trading goods and services among different countries has been " +
 //                "a significant part for business. According to the data from Bureau of Economic Analysis, exports were " +
 //                "$2,500.0 billion in 2018, up $148.9 billion from 2017. Imports were $3,121.0 billion, up $217.7 billion from 2017. " +
 //                "Even though trading business is absolutely affected by the policy preference and economic trends, it still " +
@@ -43,9 +35,9 @@ public class HomeService {
 //        return homeChartSection;
 //    }
 //
-//    public List<HomeServicesSectionEntity> getAllHomeServicesSectionEntities(){
+//    public List<Service> getAllHomeServicesSectionEntities(){
 ////        return mapper.selectAllHomeServicesSectionEntity();
-//        return new ArrayList<HomeServicesSectionEntity>();
+//        return new ArrayList<Service>();
 //    }
 
 }
