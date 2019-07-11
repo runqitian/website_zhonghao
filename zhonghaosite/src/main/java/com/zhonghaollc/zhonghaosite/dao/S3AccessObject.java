@@ -5,25 +5,39 @@ import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.model.GetObjectRequest;
 import com.amazonaws.services.s3.model.S3Object;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.io.*;
 
 @Component
 public class S3AccessObject {
-    static{
-    }
-    private AmazonS3 s3 = null;
+
+    @Value("${tmp}")
+    private String tmpDir;
+
+    private AmazonS3 s3;
+    private String resourcePath;
 
     public S3AccessObject(){
         s3 = new AmazonS3Client();
-        System.setProperty(SDKGlobalConfiguration.ENABLE_S3_SIGV4_SYSTEM_PROPERTY, "true");
+        resourcePath = S3AccessObject.class.getClassLoader().getResource("").getPath();
     }
 
     public void updateIndexDownload() throws IOException {
-        S3Object indexHtml = s3.getObject(new GetObjectRequest("zhonghaollc", "website-resource/modify/templates/index.html"));
-        indexHtml.getObjectContent();
-        S3AccessObject.writeInputStream(indexHtml.getObjectContent(),"./demo.html");
+        S3Object indexJSON = s3.getObject(new GetObjectRequest("zhonghaollc", "website-resource/modify/contents/index.json"));
+        S3Object indexHTML = s3.getObject(new GetObjectRequest("zhonghaollc", "website-resource/modify/templates/index.html"));
+        S3Object headerFTL = s3.getObject(new GetObjectRequest("zhonghaollc", "website-resource/modify/templates/header-template.ftl"));
+//        indexJSON.getObjectContent();
+//        indexHTML.getObjectContent();
+        File tmpResource = new File(resourcePath + File.separator + tmpDir);
+        if (!tmpResource.exists()){
+            tmpResource.mkdir();
+        }
+        System.out.println(tmpResource.getPath());
+        S3AccessObject.writeInputStream(indexJSON.getObjectContent(), tmpResource.getPath() + File.separator + "index.json");
+        S3AccessObject.writeInputStream(indexHTML.getObjectContent(), tmpResource.getPath() + File.separator + "index.html");
+        S3AccessObject.writeInputStream(headerFTL.getObjectContent(), tmpResource.getPath() + File.separator + "header-template.ftl");
     }
 
     public void updateContactDownload() throws Exception{
@@ -39,7 +53,6 @@ public class S3AccessObject {
             writer = new BufferedWriter(new FileWriter(writePath));
             String line = null;
             while ((line = reader.readLine()) != null) {
-                System.out.println(line);
                 writer.write(line);
             }
         } catch (IOException e) {
@@ -55,7 +68,7 @@ public class S3AccessObject {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+            System.out.println(writePath);
         }
-        System.out.println();
     }
 }

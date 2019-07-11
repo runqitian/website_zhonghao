@@ -18,7 +18,7 @@ public class UpdateService {
 
     public void updateIndex() throws IOException, TemplateException {
 
-        //s3AccessObject.updateIndexDownload();
+        s3AccessObject.updateIndexDownload();
 
         // 1. Configure FreeMarker
         //
@@ -28,7 +28,7 @@ public class UpdateService {
         Configuration cfg = new Configuration();
 
         // Where do we load the templates from:
-        cfg.setClassForTemplateLoading(UpdateService.class, "/templates");
+        cfg.setClassForTemplateLoading(UpdateService.class, "/temporary/");
 
         // Some other recommended settings:
         cfg.setIncompatibleImprovements(new Version(2, 3, 20));
@@ -88,8 +88,13 @@ public class UpdateService {
         Writer consoleWriter = new OutputStreamWriter(System.out);
         template.process(input, consoleWriter);
 
+        File tmpResource = new File(UpdateService.class.getClassLoader().getResource("").getPath() + File.separator + "templates");
+        if (!tmpResource.exists()){
+            tmpResource.mkdir();
+        }
+
         // For the sake of example, also write output into a file:
-        Writer fileWriter = new FileWriter(new File("output2.html"));
+        Writer fileWriter = new FileWriter(new File(tmpResource.getPath() + File.separator + "index.html"));
         try {
             template.process(input, fileWriter);
         } finally {
