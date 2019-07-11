@@ -1,6 +1,9 @@
 server:
   port: 80
 
+tmp:
+  temporary
+
 #spring:
 
 ##showSql
