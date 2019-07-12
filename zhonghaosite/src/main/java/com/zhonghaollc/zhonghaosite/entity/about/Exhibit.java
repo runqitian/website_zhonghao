@@ -66,12 +66,12 @@ public class Exhibit {
     }
 
     private Pair<String, String>[] upperbox;
-    private Pair<String, Figure[]> tabs;
+    private Pair<String, Figure[]>[] tabs;
 
     public Exhibit() {
     }
 
-    public Exhibit(Pair<String, String>[] upperbox, Pair<String, Figure[]> tabs) {
+    public Exhibit(Pair<String, String>[] upperbox, Pair<String, Figure[]>[] tabs) {
         this.upperbox = upperbox;
         this.tabs = tabs;
     }
@@ -84,11 +84,11 @@ public class Exhibit {
         this.upperbox = upperbox;
     }
 
-    public Pair<String, Figure[]> getTabs() {
+    public Pair<String, Figure[]>[] getTabs() {
         return tabs;
     }
 
-    public void setTabs(Pair<String, Figure[]> tabs) {
+    public void setTabs(Pair<String, Figure[]>[] tabs) {
         this.tabs = tabs;
     }
 
