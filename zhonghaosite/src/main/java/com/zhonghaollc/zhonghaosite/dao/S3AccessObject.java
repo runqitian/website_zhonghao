@@ -6,6 +6,8 @@ import com.amazonaws.services.s3.model.GetObjectRequest;
 import com.amazonaws.services.s3.model.S3Object;
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
+import com.zhonghaollc.zhonghaosite.entity.about.AboutPage;
+import com.zhonghaollc.zhonghaosite.entity.contact.ContactPage;
 import com.zhonghaollc.zhonghaosite.entity.index.IndexPage;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -45,9 +47,32 @@ public class S3AccessObject {
         return indexPage;
     }
 
-    public void updateContactDownload() throws Exception{
+    public AboutPage aboutPageDao() throws Exception{
+        downloadFileFromS3( "contents/about.json", "about.json");
+        downloadFileFromS3("templates/about.html","about.html");
+        downloadFileFromS3("templates/header.ftl", "header.ftl");
+        downloadFileFromS3("templates/footer.ftl", "footer.ftl");
 
+        Gson gson = new Gson();
+        JsonReader reader = new JsonReader(new FileReader(resourcePath + tmpDir + File.separator + "about.json"));
+        AboutPage aboutPage = gson.fromJson(reader, AboutPage.class);
+
+        return aboutPage;
     }
+
+    public ContactPage contactPageDao() throws Exception{
+        downloadFileFromS3( "contents/contact.json", "contact.json");
+        downloadFileFromS3("templates/contact.html","contact.html");
+        downloadFileFromS3("templates/header.ftl", "header.ftl");
+        downloadFileFromS3("templates/footer.ftl", "footer.ftl");
+
+        Gson gson = new Gson();
+        JsonReader reader = new JsonReader(new FileReader(resourcePath + tmpDir + File.separator + "contact.json"));
+        ContactPage contactPage = gson.fromJson(reader, ContactPage.class);
+
+        return contactPage;
+    }
+
 
     private void writeInputStream(InputStream input, String writePath){
         // Read the text input stream one line at a time and display each line.

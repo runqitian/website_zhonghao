@@ -6,15 +6,17 @@ public class Office {
     private String address;
     private String phone;
     private String email;
+    private String imgPath;
 
     public Office() {
     }
 
-    public Office(String name, String address, String phone, String email) {
+    public Office(String name, String address, String phone, String email, String imgPath) {
         this.name = name;
         this.address = address;
         this.phone = phone;
         this.email = email;
+        this.imgPath = imgPath;
     }
 
     public String getName() {
@@ -49,6 +51,14 @@ public class Office {
         this.email = email;
     }
 
+    public String getImgPath() {
+        return imgPath;
+    }
+
+    public void setImgPath(String imgPath) {
+        this.imgPath = imgPath;
+    }
+
     @Override
     public String toString() {
         return "Office{" +
@@ -56,6 +66,7 @@ public class Office {
                 ", address='" + address + '\'' +
                 ", phone='" + phone + '\'' +
                 ", email='" + email + '\'' +
+                ", imgPath='" + imgPath + '\'' +
                 '}';
     }
 }

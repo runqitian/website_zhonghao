@@ -20,17 +20,21 @@ public class HomeController {
 
 
     @GetMapping("/index/new")
-    public String hello(){
+    public String updateIndex(){
         updateService.updateIndex();
         return "success";
     }
 
-//    @GetMapping("/contact/new")
-//    public String contact(){
-//
-//    }
+    @GetMapping("/contact/new")
+    public String updateContact(){
+        updateService.updateContact();
+        return "success";
+    }
 
-
-
+    @GetMapping("/about/new")
+    public String updateAbout(){
+        updateService.updateAbout();
+        return "success";
+    }
 
 }
