@@ -45,14 +45,14 @@
                 <div class="branch-block col-lg-6 col-md-6 col-sm-12 wow fadeInUp">
                     <div class="inner-box">
                         <div class="image-box">
-                            <figure class="image"><img src="images/contact/contact1.jpg" alt=""></figure>
-                            <span class="location">Boston Office</span>
+                            <figure class="image"><img src="${contactPage.offices[0].imgPath}" alt=""></figure>
+                            <span class="location">${contactPage.offices[0].name}</span>
                         </div>
                         <div class="info-box">
                             <ul class="contact-info-list">
-                                <li><i class="icon fa fa-map"></i>Newton Riverside Center, 275 Grove Street, Suite 2-400, Newton,<br> MA 02466, United States</li>
-                                <li><i class="icon fa fa-phone"></i>+1 812-955-9227</li>
-                                <li><i class="icon fa fa-envelope"></i><a href="#">zhonghaointernational@yahoo.com</a></li>
+                                <li><i class="icon fa fa-map"></i>${contactPage.offices[0].address}</li>
+                                <li><i class="icon fa fa-phone"></i>${contactPage.offices[0].phone}</li>
+                                <li><i class="icon fa fa-envelope"></i><a href="#">${contactPage.offices[0].email}</a></li>
                             </ul>
                         </div>
                     </div>
@@ -62,14 +62,14 @@
                 <div class="branch-block col-lg-6 col-md-6 col-sm-12 wow fadeInUp" data-wow-delay="400ms">
                     <div class="inner-box">
                         <div class="image-box">
-                            <figure class="image"><img src="images/contact/contact2.jpeg" alt=""></figure>
-                            <span class="location">China Office</span>
+                            <figure class="image"><img src="${contactPage.offices[1].imgPath}" alt=""></figure>
+                            <span class="location">${contactPage.offices[1].name}</span>
                         </div>
                         <div class="info-box">
                             <ul class="contact-info-list">
-                                <li><i class="icon fa fa-map"></i>Longshan Rd, No. 3777, Jilin City, Longtan District, Jilin Province, China<br>&nbsp;</li>
-                                <li><i class="icon fa fa-phone"></i>+86 13844641166</li>
-                                <li><i class="icon fa fa-envelope"></i><a href="#">zhonghaointernational@yahoo.com</a></li>
+                                <li><i class="icon fa fa-map"></i>${contactPage.offices[1].address}&nbsp;</li>
+                                <li><i class="icon fa fa-phone"></i>${contactPage.offices[1].phone}</li>
+                                <li><i class="icon fa fa-envelope"></i><a href="#">${contactPage.offices[1].email}</a></li>
                             </ul>
                         </div>
                     </div>

@@ -27,6 +27,7 @@ public class S3AccessObject {
     private String s3Bucket;
 
     private AmazonS3 s3;
+
     private String resourcePath;
 
     public S3AccessObject(){
