@@ -1,6 +1,6 @@
 package com.zhonghaollc.zhonghaosite.entity.about;
 
-import javafx.util.Pair;
+import com.zhonghaollc.zhonghaosite.entity.other.Pair;
 
 import java.util.Arrays;
 
