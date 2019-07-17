@@ -6,43 +6,57 @@ import com.amazonaws.services.s3.model.GetObjectRequest;
 import com.amazonaws.services.s3.model.S3Object;
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
+//import com.zhonghaollc.zhonghaosite.ZhonghaositeApplication;
 import com.zhonghaollc.zhonghaosite.entity.about.AboutPage;
 import com.zhonghaollc.zhonghaosite.entity.contact.ContactPage;
 import com.zhonghaollc.zhonghaosite.entity.index.IndexPage;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
+import javax.annotation.PostConstruct;
 import java.io.*;
 
-@Component
+@Repository
 public class S3AccessObject {
+    @Value("${temp_dir}")
+    private String tempDir;
 
-    @Value("${tmp}")
-    private String tmpDir;
-
-    @Value("${s3prefix}")
+    @Value("${s3_prefix}")
     private String s3Prefix;
 
-    @Value("${s3bucket}")
+    @Value("${s3_bucket}")
     private String s3Bucket;
 
     private AmazonS3 s3;
 
-    private String resourcePath;
+    private String currentDir;
+
 
     public S3AccessObject(){
         s3 = AmazonS3ClientBuilder.defaultClient();
-        resourcePath = S3AccessObject.class.getClassLoader().getResource("").getPath();
+        String temp = this.getClass().getProtectionDomain().getCodeSource().getLocation().getPath();
+        if (temp.endsWith("/")){
+            temp = temp.substring(0,temp.length()-1);
+        }
+        String[] items = temp.split(File.separator);
+        currentDir = temp.replace(items[items.length- 1], "");
+        System.out.println(currentDir);
+    }
+
+
+    public void staticsDao() throws Exception {
     }
 
     public IndexPage indexPageDao() throws Exception {
+//        resourcePath = ZhonghaositeApplication.class.getClassLoader().getResource("").getPath();
         downloadFileFromS3( "contents/index.json", "index.json");
         downloadFileFromS3("templates/index.html","index.html");
         downloadFileFromS3("templates/header.ftl", "header.ftl");
         downloadFileFromS3("templates/footer.ftl", "footer.ftl");
 
         Gson gson = new Gson();
-        JsonReader reader = new JsonReader(new FileReader(resourcePath + tmpDir + File.separator + "index.json"));
+        JsonReader reader = new JsonReader(new FileReader(currentDir + tempDir + File.separator + "index.json"));
         IndexPage indexPage = gson.fromJson(reader, IndexPage.class);
 
         return indexPage;
@@ -55,7 +69,7 @@ public class S3AccessObject {
         downloadFileFromS3("templates/footer.ftl", "footer.ftl");
 
         Gson gson = new Gson();
-        JsonReader reader = new JsonReader(new FileReader(resourcePath + tmpDir + File.separator + "about.json"));
+        JsonReader reader = new JsonReader(new FileReader(currentDir + tempDir + File.separator + "about.json"));
         AboutPage aboutPage = gson.fromJson(reader, AboutPage.class);
 
         return aboutPage;
@@ -68,7 +82,7 @@ public class S3AccessObject {
         downloadFileFromS3("templates/footer.ftl", "footer.ftl");
 
         Gson gson = new Gson();
-        JsonReader reader = new JsonReader(new FileReader(resourcePath + tmpDir + File.separator + "contact.json"));
+        JsonReader reader = new JsonReader(new FileReader(currentDir + tempDir + File.separator + "contact.json"));
         ContactPage contactPage = gson.fromJson(reader, ContactPage.class);
 
         return contactPage;
@@ -105,7 +119,7 @@ public class S3AccessObject {
 
     private void downloadFileFromS3(String path, String saveName){
         S3Object indexJSON = s3.getObject(new GetObjectRequest(s3Bucket,s3Prefix + File.separator + path));
-        File tmpResource = new File(resourcePath + File.separator + tmpDir);
+        File tmpResource = new File(currentDir + tempDir);
         if (!tmpResource.exists()){
             tmpResource.mkdir();
         }

@@ -1,14 +1,22 @@
 server:
-  port: 80
+  port: 8080
 
-tmp:
+temp_dir:
   temporary
 
-s3prefix:
-  website-resource/modify
+html_dir:
+  html
 
-s3bucket:
+s3_prefix:
+  website/prototype
+
+s3_bucket:
   zhonghaollc
+
+site_dir:
+  default
+#  default ----- means only in target/classes/templates directory
+#  /usr/share/nginx/zhonghaollc
 
 
 
