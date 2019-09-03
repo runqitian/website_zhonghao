@@ -37,4 +37,10 @@ public class ServerController {
         return new Message();
     }
 
+    @GetMapping("/new/service")
+    public Message updateServicePage(){
+        updateService.updateServicePage();
+        return new Message();
+    }
+
 }

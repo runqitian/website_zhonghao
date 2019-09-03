@@ -10,6 +10,7 @@ import com.google.gson.stream.JsonReader;
 import com.zhonghaollc.zhonghaosite.entity.about.AboutPage;
 import com.zhonghaollc.zhonghaosite.entity.contact.ContactPage;
 import com.zhonghaollc.zhonghaosite.entity.index.IndexPage;
+import com.zhonghaollc.zhonghaosite.entity.service.ServicePage;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
@@ -86,6 +87,16 @@ public class S3AccessObject {
         ContactPage contactPage = gson.fromJson(reader, ContactPage.class);
 
         return contactPage;
+    }
+
+    public ServicePage servicePageDao() throws Exception{
+        downloadFileFromS3("templates/service.html","service.html");
+        downloadFileFromS3("templates/header.ftl", "header.ftl");
+        downloadFileFromS3("templates/footer.ftl", "footer.ftl");
+
+        ServicePage servicePage = new ServicePage();
+
+        return servicePage;
     }
 
 
