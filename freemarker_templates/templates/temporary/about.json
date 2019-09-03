@@ -1,0 +1,163 @@
+{
+    "signature":{
+        "title":"We have taken a technical approach to guide innovative projects in complex markets.",
+        "text":"Capitalize on low hanging fruit to dentify a ballpark value added activity to bettest. Override the digital divide . Nanotechnology focusing solely on the bottom line.",
+        "job":"Manager",
+        "person":"Ashley Liu",
+        "imgPath":"images/about/signature.png"
+    },
+    "feature":{
+        "titles":[
+            "Mission",
+            "Vision",
+            "Value"
+        ],
+        "texts":[
+            "We provide superior services and experienced technical solution for our customers and industries.",
+            "To be the international leading trade company, development and transfer the high-quality products among US market, China Market and worldwide.",
+            "Our commitment to professionalism customer-oriented services will make the Company’s services an advantageous choice for electrical equipment and chemical products."
+        ]
+    },
+    "exhibit":{
+        "upperbox":[
+            {
+                "key":"tab1",
+                "value":"Electrical Equipments"
+            },
+            {
+                "key":"tab2",
+                "value":"Chemicals"
+            },
+            {
+                "key":"tab3",
+                "value":"Other Products"
+            }
+        ],
+        "tabs":[
+            {
+                "key":"tab1",
+                "value":[
+                    {
+                        "title1":"Our Devices",
+                        "title2":"Our Devices",
+                        "text":"professional, reliable, stable",
+                        "imgPath":"images/about/products/product1.png"
+                    },
+                    {
+                         "title1":"Our Devices",
+                         "title2":"Our Devices",
+                         "text":"professional, reliable, stable",
+                         "imgPath":"images/about/products/product2.png"
+                    },
+                    {
+                         "title1":"Our Devices",
+                         "title2":"Our Devices",
+                         "text":"professional, reliable, stable",
+                         "imgPath":"images/about/products/product3.png"
+                    },
+                    {
+                         "title1":"Our Devices",
+                         "title2":"Our Devices",
+                         "text":"professional, reliable, stable",
+                         "imgPath":"images/about/products/product4.png"
+                    },
+                    {
+                          "title1":"Our Devices",
+                          "title2":"Our Devices",
+                          "text":"professional, reliable, stable",
+                          "imgPath":"images/about/products/product5.png"
+                    },
+                    {
+                          "title1":"Our Devices",
+                          "title2":"Our Devices",
+                          "text":"professional, reliable, stable",
+                          "imgPath":"images/about/products/product6.png"
+                    }
+                ]
+            },
+            {
+                 "key":"tab2",
+                 "value":[
+                     {
+                         "title1":"Our Devices",
+                         "title2":"Our Devices",
+                         "text":"professional, reliable, stable",
+                         "imgPath":"images/about/products/product1.png"
+                     },
+                     {
+                          "title1":"Our Devices",
+                          "title2":"Our Devices",
+                          "text":"professional, reliable, stable",
+                          "imgPath":"images/about/products/product2.png"
+                     },
+                     {
+                          "title1":"Our Devices",
+                          "title2":"Our Devices",
+                          "text":"professional, reliable, stable",
+                          "imgPath":"images/about/products/product3.png"
+                     },
+                     {
+                          "title1":"Our Devices",
+                          "title2":"Our Devices",
+                          "text":"professional, reliable, stable",
+                          "imgPath":"images/about/products/product4.png"
+                     },
+                     {
+                           "title1":"Our Devices",
+                           "title2":"Our Devices",
+                           "text":"professional, reliable, stable",
+                           "imgPath":"images/about/products/product5.png"
+                     },
+                     {
+                           "title1":"Our Devices",
+                           "title2":"Our Devices",
+                           "text":"professional, reliable, stable",
+                           "imgPath":"images/about/products/product6.png"
+                     }
+                 ]
+             },
+             {
+                 "key":"tab3",
+                 "value":[
+                     {
+                         "title1":"Our Devices",
+                         "title2":"Our Devices",
+                         "text":"professional, reliable, stable",
+                         "imgPath":"images/about/products/product1.png"
+                     },
+                     {
+                          "title1":"Our Devices",
+                          "title2":"Our Devices",
+                          "text":"professional, reliable, stable",
+                          "imgPath":"images/about/products/product2.png"
+                     },
+                     {
+                          "title1":"Our Devices",
+                          "title2":"Our Devices",
+                          "text":"professional, reliable, stable",
+                          "imgPath":"images/about/products/product3.png"
+                     },
+                     {
+                          "title1":"Our Devices",
+                          "title2":"Our Devices",
+                          "text":"professional, reliable, stable",
+                          "imgPath":"images/about/products/product4.png"
+                     },
+                     {
+                           "title1":"Our Devices",
+                           "title2":"Our Devices",
+                           "text":"professional, reliable, stable",
+                           "imgPath":"images/about/products/product5.png"
+                     },
+                     {
+                           "title1":"Our Devices",
+                           "title2":"Our Devices",
+                           "text":"professional, reliable, stable",
+                           "imgPath":"images/about/products/product6.png"
+                     }
+                 ]
+             }
+
+        ]
+    }
+}

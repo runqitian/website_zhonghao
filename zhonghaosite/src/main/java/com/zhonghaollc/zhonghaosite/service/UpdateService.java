@@ -4,6 +4,7 @@ package com.zhonghaollc.zhonghaosite.service;
 import com.zhonghaollc.zhonghaosite.dao.S3AccessObject;
 import com.zhonghaollc.zhonghaosite.entity.about.AboutPage;
 import com.zhonghaollc.zhonghaosite.entity.contact.ContactPage;
+import com.zhonghaollc.zhonghaosite.entity.service.ServicePage;
 import com.zhonghaollc.zhonghaosite.entity.index.*;
 import freemarker.cache.FileTemplateLoader;
 import freemarker.template.Configuration;
@@ -59,6 +60,23 @@ public class UpdateService {
             Template template = cfg.getTemplate("index.html");
 
             generateStatic(template, input, "index.html");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void updateServicePage() {
+        try {
+            ServicePage servicePage = s3AccessObject.servicePageDao();
+
+            Configuration cfg = setUpConfiguration();
+
+            Map<String, Object> input = new HashMap<String, Object>();
+            input.put("servicePage", servicePage);
+
+            Template template = cfg.getTemplate("service.html");
+
+            generateStatic(template, input, "service.html");
         } catch (Exception e) {
             e.printStackTrace();
         }

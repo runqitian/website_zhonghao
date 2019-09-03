@@ -5,14 +5,16 @@ public class Service {
     private String title;
     private String text;
     private String imgPath;
+    private String href;
 
     public Service(){
     }
 
-    public Service(String title, String text, String imgPath) {
+    public Service(String title, String text, String imgPath, String href) {
         this.title = title;
         this.text = text;
         this.imgPath = imgPath;
+        this.href = href;
     }
 
     public String getTitle() {
@@ -39,12 +41,21 @@ public class Service {
         this.imgPath = imgPath;
     }
 
+    public String getHref() {
+        return href;
+    }
+
+    public void setHref(String href) {
+        this.href = href;
+    }
+
     @Override
     public String toString() {
         return "Service{" +
                 "title='" + title + '\'' +
                 ", text='" + text + '\'' +
                 ", imgPath='" + imgPath + '\'' +
+                ", href='" + href + '\'' +
                 '}';
     }
 }

@@ -1,0 +1,30 @@
+server:
+  port: 8080
+
+temp_dir:
+  temporary
+
+html_dir:
+  html
+
+s3_prefix:
+  website/prototype
+
+s3_bucket:
+  zhonghaollc
+
+site_dir:
+#  default
+#  default ----- means only in target/classes/templates directory
+  /home/ec2-user/www
+
+
+
+#spring:
+
+##showSql
+#logging:
+#  level:
+#    com:
+#      example:
+#        mapper : debug
