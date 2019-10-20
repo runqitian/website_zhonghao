@@ -1,1 +1,3 @@
-zhonghao website developemnet
+# Zhonghao LLC website
+## Introduction
+**Framework:** Spring Boot, AWS Java SDK, FreeMarker, Bootstrap
